@@ -1,6 +1,6 @@
-import streamlit as st
-from datetime import datetime
 import os
+from datetime import datetime
+import streamlit as st
 from groq import Groq
 
 # Set up Groq API client with your API key
@@ -8,17 +8,18 @@ os.environ["GROQ_API_KEY"] = "gsk_pTPaJEiQwiooIUHUv8IXWGdyb3FYShbaf7Os4C9uIOXnqn
 client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 
 # Define Streamlit app
-st.title("Writing Assistant Chatbot")
-st.write("Welcome to the Writing Assistant!")
+def main():
+    st.title("Writing Assistant Chatbot")
+    st.write("Welcome to the Writing Assistant!")
 
-# Define plans
-plans = {
-    "30 Days Plan": 30,
-    "45 Days Plan": 45,
-    "60 Days Plan": 60,
-}
+    # Define plans
+    plans = {
+        "30 Days Plan": 30,
+        "45 Days Plan": 45,
+        "60 Days Plan": 60,
+    }
 
-plan_choice = st.selectbox("Select a Plan Duration", list(plans.keys()))
+    plan_choice = st.selectbox("Select a Plan Duration", list(plans.keys()))
     selected_days = plans[plan_choice]
 
     start_date = datetime.today()
