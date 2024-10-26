@@ -4,7 +4,7 @@ import streamlit as st
 from groq import Groq
 
 # Set up Groq API client with your API key
-client = Groq(api_key=os.environ["GROQ_API_KEY"])
+client = Groq(api_key=os.environ["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"])
 
 # Define your Streamlit app
 def main():
